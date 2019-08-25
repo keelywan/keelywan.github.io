@@ -1,0 +1,467 @@
+@viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+@font-face {
+    font-family: "Didact Gothic";
+    src: url("fonts/gothic/DidactGothic.ttf");
+}
+
+@font-face {
+    font-family: "Magnolia Sky";
+    src: url("fonts/magnolia-sky/magnolia_sky.ttf");
+}
+
+@font-face {
+    font-family: "Questrial";
+    src: url("fonts/questrial/Questrial-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Aubrey";
+    src: url("fonts/aubrey/AUBREY1__.TTF");
+}
+
+body {
+    margin: 0;
+    font-family: "Didact Gothic";
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+section {
+    min-height: 100%;
+}
+
+section h1 {
+    font-family: "Aubrey";
+    font-size: 2rem;
+    color: rgb(75, 74, 74);
+}
+
+h2 {
+    font-family: "Magnolia Sky";
+    margin: 0;
+    color: #fff;
+    font-size: 90px;
+}
+
+/* Bar Navigation */
+
+#bar-nav {
+    position: fixed;
+    left: 5;
+    top: 5;
+    z-index: 500;
+    color: white;
+    font-size: 2rem;
+}
+
+/* Dot Navigation */
+
+#dot-nav {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 500;
+}
+
+#dot-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#dot-nav li {
+    position: relative;
+    background-color: #dfdfdf;
+    border: 1px solid #dfdfdf;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 5px;
+    height: 1px;
+    margin: 10px 10px 0px 0px;
+    width: 1px;
+    vertical-align: bottom;
+    transition: all 0.2s ease-in-out;
+}
+
+#dot-nav li.active {
+    background-color: rgb(160, 209, 255);
+    border-color: rgb(160, 209, 255);
+}
+
+#dot-nav li:hover {
+    transform: scale(1.3);
+}
+
+#dot-nav a {
+    outline: 0;
+    vertical-align: top;
+    margin: 0px 0px 0px 25px;
+    position: relative;
+    top: -5px;
+}
+
+/* Main Page */
+
+.box {
+    position: relative;
+}
+
+.bg-img {
+    /* The image used */
+    background-image: url("img/london.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Filter on background image */
+
+.filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(44, 62, 80, 0.582);
+}
+
+.intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro h1 {
+    color: #fff;
+    font-size: 40px;
+    margin: 0;
+}
+
+.bottom {
+    bottom: 4rem;
+    position: absolute;
+    left: 50%;
+}
+
+.arrow {
+    color: #fff !important;
+    position: absolute;
+    font-size: 3rem;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+
+.arrow:hover {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#name {
+    stroke: #fff;
+    fill: #fff;
+}
+
+/* About Page */
+
+#about {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-info {
+    display: flex;
+    width: 80%;
+}
+
+#bio {
+    display: flex;
+    flex-flow: row;
+}
+
+#left {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+}
+
+#right {
+    width: 65%;
+}
+
+.profile {
+    background-image: url("img/profile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -5px;
+    width: 18vw;
+    height: 18vw;
+    border-radius: 100%;
+    margin-bottom: 5px;
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+    width: 80%;
+}
+
+#links a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(88, 163, 233);
+    transition: all 0.2s ease-in-out;
+}
+
+#links a:hover {
+    transform: scale(1.2);
+}
+
+#links a:not(:last-child) {
+    /* margin-left: 2.5rem; */
+    margin-right: 2.5rem;
+}
+
+/* Experience Page */
+
+#experience {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Projects Page */
+
+#projects {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexbox-container {
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    margin: auto;
+}
+
+.card {
+    /* height: 225px; */
+    height: 200px;
+    width: 200px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 100%;
+    /* border-radius: 35px; */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img {
+    object-fit: cover;
+    max-height: 90%;
+    max-width: 90%;
+}
+
+.card-img-fill {
+    object-fit: cover;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    width: 65%;
+}
+
+.content h3 {
+    margin: 0;
+}
+
+.content p {
+    margin: 0;
+}
+
+.title {
+    color: rgb(17, 63, 116);
+    font-family: "Questrial";
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.date {
+    color: rgb(92, 166, 196);
+    font-family: "Questrial";
+}
+
+.position {
+    color: rgb(96, 172, 73);
+    font-family: "Questrial";
+}
+
+/* Phone screen portrait mode */
+
+@media screen and (max-width: 450px) {
+    .bg-img {
+        background-position: -115px 0px;
+    }
+    /* #name {
+        font-size: 100px;
+    } */
+    svg {
+        width: 250;
+        height: 200;
+    }
+    .flexbox-container {
+        display: block;
+        width: 90%;
+    }
+    #bio {
+        display: block;
+    }
+    #left {
+        width: 100%;
+    }
+    #right {
+        width: 100%;
+    }
+    .content {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+    }
+    .title, .position, .date {
+        text-align: center;
+    }
+    .profile {
+        background-image: url("img/profile.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0px -5px;
+        width: 30vw;
+        height: 30vw;
+        border-radius: 100%;
+        margin-bottom: 5px;
+    }
+    #dot-nav {
+        visibility: hidden;
+    }
+}
+
+/* Phone screen landscape mode */
+
+@media screen and (min-width: 451px) and (max-width: 770px) {
+    .bg-img {
+        background-position: 0px 0px;
+    }
+    .flexbox-container {
+        display: block;
+        width: 80%;
+    }
+    #bio {
+        display: block;
+    }
+    #left {
+        width: 100%;
+    }
+    #right {
+        width: 100%;
+    }
+    .content {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+    }
+    #dot-nav {
+        visibility: hidden;
+    }
+}
+
+/* Laptop and computer screens */
+
+@media screen and (min-width: 771px) {
+    /* SVG Animation */
+    #name {
+        stroke: #fff;
+        fill: #fff;
+        stroke-dasharray: 1800;
+        opacity: 10;
+        animation: animate 3.5s cubic-bezier(0, 0.23, 1, 0.1);
+    }
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            fill: none;
+            stroke-dashoffset: 1800;
+        }
+        30% {
+            opacity: 10;
+            fill: none;
+            stroke-dashoffset: 1800;
+        }
+        90% {
+            fill: rgba(255, 255, 255, 0);
+        }
+        100% {
+            opacity: 10;
+            fill: rgb(255, 255, 255);
+            stroke-dashoffset: 0;
+        }
+    }
+    .flexbox-container {
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+    }
+    #about-info {
+        display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .bio-text {
+        font-size: 1.5rem;
+    }
+}

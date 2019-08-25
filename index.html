@@ -1,0 +1,338 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/906fde76e4.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/906fde76e4.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://unpkg.com/popper.js"></script> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+    <link rel="icon" href="img/icon.png" />
+    <title>Keely Wan</title>
+</head>
+
+<body>
+    <script>
+        AOS.init();
+        $(window).on('beforeunload', function () {
+            $(window).scrollTop(0);
+        });
+        $(document).ready(function () {
+            $(window).bind('scroll', function (e) {
+                dotnavigation();
+            });
+
+            function dotnavigation() {
+                var numSections = $('section').length;
+
+                $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');
+                $('section').each(function (i, item) {
+                    var ele = $(item), nextTop;
+
+                    if (typeof ele.next().offset() != "undefined") {
+                        nextTop = ele.next().offset().top;
+                    }
+                    else {
+                        nextTop = $(document).height();
+                    }
+
+                    if (ele.offset() !== null) {
+                        thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numSections);
+                        // thisTop = ele.offset().top;
+                    }
+                    else {
+                        thisTop = 0;
+                    }
+
+                    var docTop = $(document).scrollTop() + 1;
+
+                    if (docTop >= thisTop && (docTop < nextTop)) {
+                        $('#dot-nav li').eq(i).addClass('active');
+                    }
+                });
+            }
+            $('#dot-nav li').click(function () {
+
+                var id = $(this).find('a').attr("href"),
+                    posi,
+                    ele,
+                    padding = 0;
+
+                ele = $(id);
+                posi = ($(ele).offset() || 0).top - padding;
+
+                $('html, body').animate({ scrollTop: posi }, 'slow');
+
+                return false;
+            });
+
+            // $("dropdown-menu a").click(function () {
+            //     var id = $(this).attr("href"),
+            //         posi,
+            //         ele,
+            //         padding = 0;
+
+            //     ele = $(id);
+            //     posi = ($(ele).offset() || 0).top - padding;
+
+            //     $('html, body').animate({ scrollTop: posi }, 'slow');
+
+            //     return false;
+            // });
+        });
+    </script>
+    <div id="dot-nav">
+        <ul>
+            <li class="active"><a href="#main"></a></li>
+            <li><a href="#about"></a></li>
+            <li><a href="#experience"></a></li>
+            <li><a href="#projects"></a></li>
+        </ul>
+    </div>
+    <!-- <div id="bar-nav">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#main">Main</a>
+                            <a class="dropdown-item" href="#about">About</a>
+                            <a class="dropdown-item" href="#experience">Experience</a>
+                            <a class="dropdown-item" href="#projects">Projects</a>
+                        </div>
+                    </div>
+                </div> -->
+    <section id="main">
+        <div class="box">
+            <div class="bg-img"></div>
+            <div class="filter"></div>
+            <div class="intro">
+                <h1 id="heading">hey, i'm</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="666" height="266" viewBox="0 0 666 266">
+                    <text id="name" data-name="Keely Wan" transform="translate(14 174)" fill="#070606" font-size="130"
+                        font-family="MagnoliaSky, Magnolia Sky">
+                        <tspan x="0" y="0">Keely Wan</tspan>
+                    </text>
+                </svg>
+            </div>
+            <!-- <div class="bottom">
+                            <a class="arrow">&rang;</a>
+                        </div> -->
+        </div>
+    </section>
+    <section id="about">
+        <h1>~ about me ~</h1>
+        <div id="about-info" data-aos="fade-up">
+            <div id="bio">
+                <div id="left">
+                    <div class="profile"></div>
+                </div>
+                <div id="right">
+                    <p class="bio-text">I'm a sophomore studying computer science at Cornell University. (Also known
+                        as a dabbler in the arts, avid hiker, and resident bookworm). </p>
+                    <p class="bio-text">Currently reading the novels of Sherlock Holmes - any book recommendations
+                        are welcome!</p>
+                </div>
+            </div>
+        </div>
+        <div id="links" data-aos="fade-up">
+            <a href="https://www.linkedin.com/in/keely-wan/">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/keelywan">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100008221068792">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="mailto:kw443@cornell.edu">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="Keely_Wan_Resume" download>
+                <i class="fas fa-download"></i>
+            </a>
+        </div>
+    </section>
+    <section id="experience">
+        <h1>~ my experiences ~</h1>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/mitre.png" class="card-img"></div>
+            </div>
+            <div class="content">
+                <p class="title">MITRE Corporation</p>
+                <p class="position">Cyber Intern</p>
+                <p class="date">Summer 2019</p>
+                <br>
+                <p>During this summer, I got to further my interest in web development by trying new technologies
+                    such as the MEAN Stack to develop a web application. I also had the oppportunity to explore other
+                    fields including cloud computing (by learning about network architectures and creating network
+                    blueprints) and cyber security (by practicing offensive cyber operations like SQL injection in live
+                    environments).</p>
+                <!-- <p>At MITRE, I developed a web application using the MEAN (MongoDB, Express, AngularJS, Node) Stack to
+                                streamline the process of generating network blueprints for multiple cloud service providers. </p>
+                            <p>Outside of this project, I also had the opportunity to learn and practice offensive cyber operations
+                                through tech sessions and live environments. </p> -->
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/cornell_logo.png" class="card-img-fill"></div>
+            </div>
+            <div class="content">
+                <p class="title">Cornell University</p>
+                <p class="position">CS Consultant</p>
+                <p class="date">Jan 2019 - Present</p>
+                <br>
+                <p>Being a consultant for CS 2110, an introductory Java course, was an unforgettable experience.
+                    I strengthened my understanding of object oriented programming material (as I worked through
+                    explanations and provided guidance and feedback on assigments), improved my time management
+                    skills (by scheduling in weekly office hours), and met and worked alongside some incredible peers.
+                </p>
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/acsu.png" class="card-img"></div>
+            </div>
+            <div class="content">
+                <p class="title">Association of Computer Science Undergraduates</p>
+                <p class="position">Academic Chair</p>
+                <p class="date">Sep 2018 - Present</p>
+                <br>
+                <p>As a member of the academic team of ACSU, I helped plan educational events such as
+                    introductory programming workshops and research tech talks for the
+                    computer science community. In spring of 2019, I organized and led the first Computer and
+                    Information Science Department Cornell Days event to welcome prospective
+                    freshmen interested in the computing field, which gave me the opportunity to work with the CS
+                    department and student groups to prepare presentations and activities to introduce the resources
+                    available at Cornell. Feel free to check out our
+                    schedule <a
+                        href="https://www.cs.cornell.edu/information/news/newsitem10436/welcome-cornell-days-computer-science">here!</a>
+                </p>
+                <!-- <p>Being a part of ACSU has expanded my </p> -->
+                <!-- <p>As a member of the academic team of ACSU, I help plan educational events such as
+                                introductory programming workshops and research tech talks for the
+                                computer science community. In spring of 2019, I organized and led the first Computer and
+                                Information Science Department Cornell Days event to welcome prospective
+                                freshmen interested in the computing field. I worked with the CS
+                                department as well as student groups to prepare presentations and activities to
+                                introduce the resources available at Cornell. Feel free to check out the
+                                schedule <a
+                                    href="https://www.cs.cornell.edu/information/news/newsitem10436/welcome-cornell-days-computer-science">here.</a>
+                            </p> -->
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/cornell.jpg" class="card-img-fill"></div>
+            </div>
+            <div class="content">
+                <p class="title">Cornell University</p>
+                <p class="position">BS in Computer Science</p>
+                <p class="date">Aug 2018 - Present</p>
+                <br>
+                <p>Being at Cornell has pushed me in ways I never expected. Foremost, it has taught me so much - from
+                    how to brave the cold weather (lots and lots of layers!) to coding asynchronous robots. With my time
+                    at ACSU, I've strengthened my leadership and communication skills, while finding a sense of
+                    community. And my exploration of Cornell's surrounding areas has taught me to appreciate its
+                    landscape and the raw beauty of nature.
+                </p>
+            </div>
+        </div>
+        <!-- <div class="flexbox-container" data-aos="fade-up">
+                        <div class="card-container">
+                            <div class="card"><img src="img/fairfaxcollegiate.png" class="card-img-fill"></div>
+                        </div>
+                        <div class="content">
+                            <p class="title">Fairfax Collegiate</p>
+                            <p class="position">Instructor</p>
+                            <p class="date">Summer 2018</p>
+                            <br>
+                            <p>I</p>
+                        </div>
+                    </div> -->
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/tjhsst.jpg" class="card-img-fill"></div>
+            </div>
+            <div class="content">
+                <p class="title">Thomas Jefferson High School for Science and Technology</p>
+                <p class="position">Advanced Studies Diploma</p>
+                <p class="date">Sep 2014 - June 2018</p>
+                <br>
+                <p>My four years at TJHSST were challenging, yet they gifted me with extraordinarily rewarding
+                    experiences. As captain of the girls varsity tennis team, I led the team to the state championships
+                    twice. I forged stronger bonds with my community through my engagement at service events. Finally,
+                    it was at TJ where I nurtured my passion for computer science with the help of my brilliant teachers
+                    and classmates.
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <section id="projects">
+        <h1>~ my projects ~</h1>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/catfish.png" class="card-img-fill"></div>
+                <!-- <h3>Column 1</h3> -->
+            </div>
+            <div class="content">
+                <p class="title">Catfish</p>
+                <p class="date">July 2019</p>
+                <br>
+                <p>At the MITRE hackathon, I worked with my team to develop a web game designed to educate users
+                    about MITRE's identity matching program. Besides illustrating the relationships between social media
+                    profiles, the game also demonstrated the various techniques and features (such as user handle, time
+                    of activity, or social circles) utilized by programs to match together online identity profiles.
+                </p>
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/autobike.png" class="card-img-fill"></div>
+            </div>
+            <div class="content">
+                <p class="title">CU Autonomous Bicycle</p>
+                <p class="date">Jan 2019 - Present</p>
+                <br>
+                <p>CU Autonomous Bicycle Team is an undergraduate project team at Cornell University working towards
+                    building a self-navigating and self-balancing bicycle. During my time on the team, I got hands-on
+                    experience by working with the physical components of the bike, and learned how to use the Raspberry
+                    Pi and Arduino to control the front wheel. </p>
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/myo.png" class="card-img"></div>
+            </div>
+            <div class="content">
+                <p class="title">Myo Armband Research</p>
+                <p class="date">Aug 2017 - June 2018</p>
+                <br>
+                <p>The Myo Armband Research was my first large-scale computer science project, and it gave me the
+                    freedom to explore my own interests by crafting my own research objective. From this experience, I
+                    learned to document my progress and work collaboratively with my partner.</p>
+            </div>
+        </div>
+        <!-- <div class="flexbox-container" data-aos="fade-up">
+                        <div class="card-container">
+                            <div class="card"></div>
+                        </div>
+                        <div class="content">
+                            <p class="title">PearIt</p>
+                            <p class="date">March 2018</p>
+                        </div>
+                    </div> -->
+    </section>
+</body>
+
+</html>
