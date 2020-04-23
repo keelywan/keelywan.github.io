@@ -19,7 +19,6 @@
 
 <body>
     <script>
-        AOS.init();
         $(window).on('beforeunload', function () {
             $(window).scrollTop(0);
         });
@@ -72,6 +71,7 @@
                 return false;
             });
 
+
             // $("dropdown-menu a").click(function () {
             //     var id = $(this).attr("href"),
             //         posi,
@@ -86,7 +86,24 @@
             //     return false;
             // });
         });
+        $(window).on('load', function () {
+            AOS.init();
+            $("#dot-nav").css('display', 'block');
+            $("#main").css('display', 'block');
+            $("#about").css('display', 'flex');
+            $("#experience").css('display', 'flex');
+            $("#projects").css('display', 'flex');
+            $("#loading").css('display', 'none');
+        })
     </script>
+    <div id="loading">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <div id="dot-nav">
         <ul>
             <li class="active"><a href="#main"></a></li>
