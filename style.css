@@ -205,6 +205,7 @@ h2 {
 #bio {
     display: flex;
     flex-flow: row;
+    width: 100%;
 }
 
 #left {
@@ -386,10 +387,14 @@ h2 {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 0px -5px;
-        width: 30vw;
-        height: 30vw;
+        width: 45vw;
+        height: 45vw;
         border-radius: 100%;
         margin-bottom: 5px;
+    }
+    .card {
+        height: 45vw; 
+        width: 45vw; 
     }
     #dot-nav {
         visibility: hidden;
@@ -471,10 +476,10 @@ h2 {
     }
 }
 
+/* Large Screens */ 
+
 @media screen and (min-width: 1500px) {
     body, 
-    .bio-text,
-    .title, 
     .date, 
     #links a {
         font-size: 2rem; 
@@ -484,9 +489,29 @@ h2 {
         font-size: 4rem; 
     }
 
+    .bio-text {
+        font-size: 2.5rem; 
+    }
+
+    .title {
+        font-size: 2.2rem; 
+    }
+
     .card {
         height: 350px; 
         width: 350px; 
+    }
+
+    .flexbox-container {
+        width: 65%;
+    }
+
+    #about-info {
+        width: 65%; 
+    }
+
+    br {
+        line-height: 25%; 
     }
 }
 

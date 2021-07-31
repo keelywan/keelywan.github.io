@@ -87,13 +87,15 @@
             // });
         });
         $(window).on('load', function () {
-            $("#dot-nav").css('display', 'block');
-            $("#main").css('display', 'block');
-            $("#about").css('display', 'flex');
-            $("#experience").css('display', 'flex');
-            $("#projects").css('display', 'flex');
-            $("#loading").css('display', 'none');
-            AOS.init();
+            setTimeout(() => {
+                $("#dot-nav").css('display', 'block');
+                $("#main").css('display', 'block');
+                $("#about").css('display', 'flex');
+                $("#experience").css('display', 'flex');
+                $("#projects").css('display', 'flex');
+                $("#loading").css('display', 'none');
+                AOS.init();
+            }, 1000);
         })
     </script>
     <div id="loading">
@@ -152,11 +154,23 @@
                     <div class="profile"></div>
                 </div>
                 <div id="right">
-                    <p class="bio-text">I'm a sophomore studying computer science at Cornell University. (Also known
-                        as a dabbler in the arts, avid hiker, and resident bookworm). </p>
-                    <p class="bio-text">Currently reading the novels of Sherlock Holmes - any book recommendations
-                        are welcome!</p>
+                    <p class="bio-text">senior studying computer science &NonBreakingSpace;&bull;&NonBreakingSpace;
+                        born and raised in virginia &NonBreakingSpace;&bull;&NonBreakingSpace;
+                        resident bookworm &NonBreakingSpace;&bull;&NonBreakingSpace;
+                        occasional hiker &NonBreakingSpace;&bull;&NonBreakingSpace;
+                        dog lover &NonBreakingSpace;&bull;&NonBreakingSpace;
+                        art dabbler
+                    </p>
+                    <p class="bio-text">
+                        ...currently reading <i>on earth we're briefly gorgeous</i> - any book recommendations welcome
+                    </p>
                 </div>
+                <!-- <div id="right">
+                    <p class="bio-text">I'm a senior studying computer science at Cornell University. (Also known
+                        as a dabbler in the arts, avid hiker, and resident bookworm). </p>
+                    <p class="bio-text">Currently reading <i>On Earth We're Briefly Gorgeous</i> - any book recommendations
+                        are welcome!</p>
+                </div> -->
             </div>
         </div>
         <div id="links" data-aos="fade-up">
@@ -179,6 +193,37 @@
     </section>
     <section id="experience">
         <h1>&horbar; experiences &horbar;</h1>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/tesla.png" class="card-img"></div>
+            </div>
+            <div class="content">
+                <p class="title">Tesla, Inc.</p>
+                <p class="position">Electrical Distribution Intern</p>
+                <p class="date">Spring 2021</p>
+                <br>
+                <p>I built and maintained internal tools that were used daily by hundreds of engineers. I
+                    also met and discussed with other engineers to design new internal tools that would
+                    streamline the process in which the company designs wire harness technology for the
+                    latest car models.</p>
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
+                <div class="card"><img src="img/google.png" class="card-img"></div>
+            </div>
+            <div class="content">
+                <p class="title">Google, Inc.</p>
+                <p class="position">STEP Intern</p>
+                <p class="date">Summer 2020</p>
+                <br>
+                <p>My internship project changed drastically because everything went virtual. I ended up making
+                    a full stack web platform for students to create, upload, and search for course notes. I was
+                    really excited because I had the opportunity to develop a Chrome extension (something I had
+                    always wanted to do!) that simplified the note creation process by quickly creating a new
+                    Google Docs notes template that would be automatically linked to the platform.</p>
+            </div>
+        </div>
         <div class="flexbox-container" data-aos="fade-up">
             <div class="card-container">
                 <div class="card"><img src="img/mitre.png" class="card-img"></div>
@@ -206,7 +251,7 @@
             <div class="content">
                 <p class="title">Cornell University</p>
                 <p class="position">CS Consultant</p>
-                <p class="date">Jan 2019 - Present</p>
+                <p class="date">Jan 2019 - Dec 2020</p>
                 <br>
                 <p>Being a consultant for CS 2110, an introductory Java course, was an unforgettable experience.
                     I strengthened my understanding of object oriented programming material (as I worked through
@@ -299,8 +344,23 @@
         <h1>&horbar; projects &horbar;</h1>
         <div class="flexbox-container" data-aos="fade-up">
             <div class="card-container">
+                <div class="card"><img src="img/spotify.png" class="card-img-fill"></div>
+            </div>
+            <div class="content">
+                <p class="title">Spotify Playlist Mixer</p>
+                <p class="date">May 2020</p>
+                <br>
+                <p>Have you ever needed a playlist that appeals to everyone's taste? The goal with this app was to
+                    develop a web app to generate a single Spotify playlist from an input of multiple playlists. I
+                    worked with my teammates to utilize information retrieval techniques like cosine similarity, term
+                    frequency - inverse document frequency, and singular value decomposition to determine the
+                    similarity between songs so we could recommend songs for everyone.
+                </p>
+            </div>
+        </div>
+        <div class="flexbox-container" data-aos="fade-up">
+            <div class="card-container">
                 <div class="card"><img src="img/catfish.png" class="card-img-fill"></div>
-                <!-- <h3>Column 1</h3> -->
             </div>
             <div class="content">
                 <p class="title">Catfish</p>
